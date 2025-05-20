@@ -1,0 +1,52 @@
+document.addEventListener("DOMContentLoaded", () => {
+  //add padding to the body with the height of header
+  const header = document.querySelector("header");
+  const navbarHeight = header.offsetHeight;
+  document.body.style.paddingTop = navbarHeight + "px";
+  // menu-bar
+  const menuBar = document.querySelector(".menu-bar");
+  menuBar.addEventListener("click", () => {
+    menuBar.classList.toggle("active");
+    document.body.classList.toggle("active-menu");
+  });
+
+  //typewriter call
+  type();
+});
+
+//typewriter
+const typedText = document.querySelector(".typed-text");
+const cursor = document.querySelector(".cursor");
+
+const textArray = ["IMPLEMENT", "DEVELOP", "Learner..."];
+
+let textArrayIndex = 0;
+let charIndex = 0;
+
+const erase = () => {
+  if (charIndex > 0) {
+    cursor.classList.remove("blink");
+    typedText.textContent = textArray[textArrayIndex].slice(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, 80);
+  } else {
+    cursor.classList.add("blink");
+    textArrayIndex++;
+    if (textArrayIndex > textArray.length - 1) {
+      textArrayIndex = 0;
+    }
+    setTimeout(type, 1000);
+  }
+};
+
+const type = () => {
+  if (charIndex <= textArray[textArrayIndex].length - 1) {
+    cursor.classList.remove("blink");
+    typedText.textContent += textArray[textArrayIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, 120);
+  } else {
+    cursor.classList.add("blink");
+    setTimeout(erase, 1000);
+  }
+};
