@@ -36,10 +36,14 @@
   position: absolute;
   inset-inline-start: 50px;
   transition: 0.5s ease;
-  width: 111px;
+  width: 140px;
+}
+.header .logo img {
+  width: 100%;
 }
 .active-menu .logo {
-  inset-inline-start: calc(100% - 111px);
+  inset-inline-start: calc(100% - 140px);
+  width: 106px;
 }
 .main-menu {
   opacity: 0;
@@ -58,6 +62,7 @@
 .active-menu .main-menu {
   opacity: 1;
   visibility: visible;
+  height: 100vh;
 }
 .menu-img {
   aspect-ratio: 289 / 578;
@@ -225,6 +230,11 @@
     background: transparent;
   }
 }
+@media (min-width: 992px) and (max-width: 1199px) {
+  .txt-content {
+    max-width: 65%;
+  }
+}
 @media screen and (min-width: 992px) {
   footer {
     bottom: -54px !important;
@@ -269,8 +279,7 @@
     margin-top: 50px;
   }
   .menu-img {
-    margin-bottom: 30px;
-    aspect-ratio: 1 / 1;
+    display: none;
   }
   .company-name {
     font-size: 12px;
@@ -278,5 +287,8 @@
   .footer-list li > a {
     display: none;
     padding: 8px 16px;
+  }
+  .menu-item > .menu-link {
+    font-size: 16px;
   }
 }

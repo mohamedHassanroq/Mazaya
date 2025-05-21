@@ -1,9 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  //add padding to the body with the height of header
-  const header = document.querySelector("header");
-  const navbarHeight = header.offsetHeight;
-  document.body.style.paddingTop = navbarHeight + "px";
-  // menu-bar
   const menuBar = document.querySelector(".menu-bar");
   menuBar.addEventListener("click", () => {
     menuBar.classList.toggle("active");
