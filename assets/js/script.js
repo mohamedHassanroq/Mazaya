@@ -1,47 +1,188 @@
 document.addEventListener("DOMContentLoaded", () => {
+  //add padding to the body with the height of header
+  const header = document.querySelector("header");
+  const navbarHeight = header.offsetHeight;
+  document.documentElement.style.setProperty(
+    "--header-height",
+    navbarHeight + "px"
+  );
+
+  const footer = document.querySelector("footer");
+  const footerHeight = footer.offsetHeight - 58;
+  document.documentElement.style.setProperty(
+    "--footer-height",
+    footerHeight + "px"
+  );
+
   const menuBar = document.querySelector(".menu-bar");
-  menuBar.addEventListener("click", () => {
+  menuBar?.addEventListener("click", () => {
     menuBar.classList.toggle("active");
     document.body.classList.toggle("active-menu");
   });
 
-  //typewriter call
-  type();
-});
+  //open search
+  const searchButtons = document.querySelectorAll(".search-btn");
+  const searchBox = document.querySelector(".search-box");
 
-//typewriter
-const typedText = document.querySelector(".typed-text");
-const cursor = document.querySelector(".cursor");
+  searchButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      searchBox.classList.toggle("active");
+    });
+  });
 
-const textArray = ["IMPLEMENT", "DEVELOP", "Learner..."];
+  // Typewriter setup
+  const typedText = document.querySelector(".typed-text");
+  const cursor = document.querySelector(".cursor");
 
-let textArrayIndex = 0;
-let charIndex = 0;
+  if (typedText && cursor) {
+    const textArray = ["IMPLEMENT", "DEVELOP", "Learner..."];
+    let textArrayIndex = 0;
+    let charIndex = 0;
 
-const erase = () => {
-  if (charIndex > 0) {
-    cursor.classList.remove("blink");
-    typedText.textContent = textArray[textArrayIndex].slice(0, charIndex - 1);
-    charIndex--;
-    setTimeout(erase, 80);
-  } else {
-    cursor.classList.add("blink");
-    textArrayIndex++;
-    if (textArrayIndex > textArray.length - 1) {
-      textArrayIndex = 0;
+    const erase = () => {
+      if (charIndex > 0) {
+        cursor.classList.remove("blink");
+        typedText.textContent = textArray[textArrayIndex].slice(
+          0,
+          charIndex - 1
+        );
+        charIndex--;
+        setTimeout(erase, 80);
+      } else {
+        cursor.classList.add("blink");
+        textArrayIndex++;
+        if (textArrayIndex >= textArray.length) {
+          textArrayIndex = 0;
+        }
+        setTimeout(type, 1000);
+      }
+    };
+
+    const type = () => {
+      if (charIndex <= textArray[textArrayIndex].length - 1) {
+        cursor.classList.remove("blink");
+        typedText.textContent += textArray[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 120);
+      } else {
+        cursor.classList.add("blink");
+        setTimeout(erase, 1000);
+      }
+    };
+
+    type(); // Start the typewriter
+  }
+
+  //add active for the current page link
+  const currentPath = window.location.pathname;
+  const navItems = document.querySelectorAll(".footer-list li");
+
+  navItems.forEach((li) => {
+    const link = li.querySelector("a");
+    if (
+      link &&
+      link.getAttribute("href") !== "#!" &&
+      link.getAttribute("href") !== "#"
+    ) {
+      const linkPath = new URL(link.href, window.location.origin).pathname;
+
+      const isHome =
+        (currentPath === "/" || currentPath === "/index.html") &&
+        (linkPath === "/" || linkPath === "/index.html");
+
+      if (isHome || currentPath === linkPath) {
+        li.classList.add("active");
+      } else {
+        li.classList.remove("active");
+      }
     }
-    setTimeout(type, 1000);
-  }
-};
+  });
 
-const type = () => {
-  if (charIndex <= textArray[textArrayIndex].length - 1) {
-    cursor.classList.remove("blink");
-    typedText.textContent += textArray[textArrayIndex].charAt(charIndex);
-    charIndex++;
-    setTimeout(type, 120);
-  } else {
-    cursor.classList.add("blink");
-    setTimeout(erase, 1000);
+  //side nav in small sizes
+  const sideNav = document.querySelector(".side-nav");
+  const toggleBtn = document.getElementById("toggleSideNav");
+
+  if (!sideNav || !toggleBtn) return;
+
+  if (window.innerWidth <= 1199) {
+    sideNav.classList.add("visible");
+    setTimeout(() => {
+      sideNav.classList.remove("visible");
+    }, 3000);
   }
-};
+
+  toggleBtn.addEventListener("click", () => {
+    sideNav.classList.toggle("visible");
+  });
+
+  //clients slider
+  var clientsSlider = new Swiper(".clients-slider .swiper", {
+    autoplay: {
+      delay: 3000,
+    },
+    grid: {
+      rows: 3,
+      fill: "row",
+    },
+    speed: 1000,
+    preloadImages: true,
+    // Navigation arrows
+    navigation: {
+      nextEl: ".clients-row .swiper-button-next",
+      prevEl: ".clients-row .swiper-button-prev",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+      992: {
+        slidesPerView: 4,
+        spaceBetween: 15,
+      },
+      1199: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+    },
+    on: {
+      init: function (swiper) {
+        lazyLoad();
+      },
+    },
+  });
+
+  //lazy load setup
+  function lazyLoad() {
+    const images = document.querySelectorAll(".lazy-img");
+
+    const imageObserver = new IntersectionObserver(function (enteries) {
+      enteries.forEach(function (entery) {
+        if (!entery.isIntersecting) {
+          return;
+        } else {
+          preloadImage(entery.target);
+          imageObserver.unobserve(entery.target);
+        }
+      });
+    });
+
+    images.forEach(function (image) {
+      imageObserver.observe(image);
+    });
+  }
+
+  function preloadImage(img) {
+    img.src = img.getAttribute("data-src");
+    img.onload = function () {
+      img.parentElement.classList.remove("loading-img");
+      img.parentElement.classList.add("loaded-img");
+    };
+  }
+
+  lazyLoad();
+});

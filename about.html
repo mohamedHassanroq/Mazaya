@@ -12,6 +12,7 @@
     <!-- PAGE TITLE HERE -->
     <title>Mazaya</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/line-awesome.min.css" />
     <link rel="stylesheet" href="./assets/css/fonts.css" />
     <link rel="stylesheet" href="./assets/css/custom.css" />
   </head>
@@ -88,11 +89,11 @@
         <div class="container">
           <div class="row">
             <div class="col-md-3">
-              <div class="menu-img">
+              <div class="menu-img loading-img">
                 <img
-                  src="./assets/images/menu-img.jpg"
+                  data-src="./assets/images/menu-img.jpg"
                   alt="menu"
-                  class="img-fluid img-cover"
+                  class="img-fluid img-cover lazy-img"
                   loading="eager"
                 />
               </div>
@@ -122,7 +123,7 @@
                     <span class="menu-icon flex">
                       <img
                         src="./assets/images/icons/information.svg"
-                        alt="home"
+                        alt="About"
                         class="img-fluid"
                       />
                     </span>
@@ -134,7 +135,7 @@
                     <span class="menu-icon flex">
                       <img
                         src="./assets/images/icons/box-search.svg"
-                        alt="home"
+                        alt="Products"
                         class="img-fluid"
                       />
                     </span>
@@ -149,7 +150,7 @@
                     <span class="menu-icon flex">
                       <img
                         src="./assets/images/icons/setting.svg"
-                        alt="home"
+                        alt="Services"
                         class="img-fluid"
                       />
                     </span>
@@ -161,7 +162,7 @@
                     <span class="menu-icon flex">
                       <img
                         src="./assets/images/icons/ranking.svg"
-                        alt="home"
+                        alt="Careers"
                         class="img-fluid"
                       />
                     </span>
@@ -173,7 +174,7 @@
                     <span class="menu-icon flex">
                       <img
                         src="./assets/images/icons/messages.svg"
-                        alt="home"
+                        alt="Contact"
                         class="img-fluid"
                       />
                     </span>
@@ -189,47 +190,90 @@
     </header>
     <!-- End Header -->
 
-    <!-- Start Hero -->
-    <main class="hero-section">
-      <div class="main-content position-relative">
-        <div class="hero-img position-relative">
-          <img
-            src="./assets/images/main.png"
-            alt="hero image"
-            class="img-fluid"
-          />
+    <!-- Start About Page -->
+    <div class="about-page">
+      <div class="container">
+        <h1 class="fixh page-title">About us</h1>
+        <!-- Start breadcrumb -->
+        <div class="breadcrumb">
+          <ul class="fixul flex">
+            <li><a href="index.html" class="text-decoration-none">Home</a></li>
+            <li class="active">
+              <a href="about.html" class="text-decoration-none">About us</a>
+            </li>
+          </ul>
         </div>
-        <div class="hero-txt">
-          <div class="container">
-            <div class="txt-content">
-              <h1 class="title-content">
-                <span class="d-block first-line">We</span>
-                <span class="typed-text second-line"></span>
-                <span class="cursor blink">&nbsp;</span>
-                <span class="d-block third-line">Corporate Software</span>
-              </h1>
-              <p class="txt-description">
-                We specialize in delivering cutting-edge technology solutions
-                tailored to meet the unique needs of your business.
-              </p>
-              <div class="action-anchors d-flex">
-                <a
-                  href="#!"
-                  class="text-decoration-none consult_anc flex secondery-hover"
-                  >Consult Team</a
-                >
-                <a
-                  href="#!"
-                  class="text-decoration-none learn_anc flex secondery-hover"
-                  >Learn More</a
-                >
+        <!-- End breadcrumb -->
+        <div class="page-content">
+          <div id="content">
+            <div class="about-section">
+              <div class="row align-items-center g-5">
+                <div class="col-lg-4">
+                  <div class="about-img loading-img">
+                    <img
+                      data-src="./assets/images/about-img.svg"
+                      alt="about"
+                      class="img-fluid img-cover lazy-img"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-8">
+                  <div class="about-text">
+                    <div class="page-head">
+                      <h2 class="fixh title">About MAZAYA</h2>
+                      <h3 class="fixh subtitle">Why you choose us</h3>
+                    </div>
+                    <p class="fixp about-description">
+                      At Mazaya, we redefine how institutions operate by
+                      delivering smart, innovative digital solutions. Our
+                      user-centric platforms, like Schoolna , our smart school
+                      management system, are crafted to boost efficiency and
+                      meet the evolving demands of today’s educational
+                      landscape.
+                    </p>
+                    <ul class="fixul about-list">
+                      <li>Built by Experts in Education Technology.</li>
+                      <li>Real-Time, Seamless Communication.</li>
+                      <li>Local Support You Can Count On</li>
+                      <li>Proven Results & Testimonials.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mission-section">
+              <div class="row g-5">
+                <div class="col-lg-4">
+                  <div class="msision-img loading-img">
+                    <img
+                      data-src="./assets/images/mission.png"
+                      alt="about"
+                      class="img-fluid img-cover lazy-img"
+                    />
+                    <div class="img-text">
+                      Empowering your business through smart, secure, and
+                      innovative technology. From AI to cybersecurity and mobile
+                      solutions, we lead your digital transformation with expert
+                      insight and a world-class team.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-8">
+                  <div class="missions-text loading-img">
+                    <img
+                      data-src="./assets/images/missions.png"
+                      alt="missions"
+                      class="img-fluid img-cover lazy-img"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </main>
-    <!-- End Hero -->
+    </div>
+    <!-- End About Page -->
 
     <!-- Start Footer -->
     <footer class="footer fixed-bottom">
@@ -237,7 +281,7 @@
         <div class="footer-list py-3">
           <div class="container">
             <ul class="fixul d-flex align-items-center justify-content-between">
-              <li>
+              <li class="active">
                 <a
                   href="index.html"
                   class="text-decoration-none d-flex align-items-center gap-1"

@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- META -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- FAVICONS ICON -->
+    <link rel="icon" type="image/png" href="./assets//images/favicon.png" />
+    <!-- PAGE TITLE HERE -->
+    <title>Mazaya</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/line-awesome.min.css" />
+    <link rel="stylesheet" href="./assets/css/fonts.css" />
+    <link rel="stylesheet" href="./assets/css/custom.css" />
+  </head>
+  <body>
+    <!-- Start Header -->
+    <header class="header fixed-top bg-white">
+      <div class="container">
+        <nav
+          class="main-nav d-flex justify-content-between py-3 position-relative"
+        >
+          <div class="start-block d-flex align-items-center">
+            <button
+              class="menu-bar rounded-circle bg-transparent flex-col"
+              type="button"
+              aria-label="menu bar"
+            >
+              <span class="bar d-inline-block"></span>
+              <span class="bar d-inline-block"></span>
+              <span class="bar d-inline-block"></span>
+            </button>
+            <div class="logo">
+              <a href="index.html">
+                <img
+                  src="./assets/images/logo.svg"
+                  alt="logo"
+                  class="img-fluid"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="end-block d-flex align-items-center gap-4">
+            <button class="border-0 bg-transparent search-btn">
+              <img
+                src="./assets/images/icons/search.svg"
+                alt="search"
+                class="img-fluid"
+              />
+            </button>
+            <a
+              href="#!"
+              class="border-0 bg-transparent d-inline-block lang-anc"
+            >
+              <img
+                src="./assets/images/icons/lang.svg"
+                alt="lang"
+                class="img-fluid"
+              />
+            </a>
+          </div>
+        </nav>
+      </div>
+      <!-- start search -->
+      <div class="search-box">
+        <div class="container">
+          <form action="#!" class="search-form">
+            <input
+              type="search"
+              class="search-input form-control"
+              placeholder="Search..."
+            />
+            <button type="submit" class="border-0 bg-transparent search-btn">
+              <img
+                src="./assets/images/icons/search.svg"
+                alt="search"
+                class="img-fluid"
+              />
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- end search -->
+      <!-- start menu -->
+      <div class="main-menu w-100 z-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="menu-img">
+                <img
+                  src="./assets/images/menu-img.jpg"
+                  alt="menu"
+                  class="img-fluid img-cover"
+                  loading="eager"
+                />
+              </div>
+            </div>
+            <div class="col-md-9">
+              <ul class="fixul menu-list">
+                <li class="menu-item">
+                  <a
+                    href="index.html"
+                    class="menu-link text-decoration-none flex-col"
+                  >
+                    <span class="menu-icon flex">
+                      <img
+                        src="./assets/images/icons/home.svg"
+                        alt="home"
+                        class="img-fluid"
+                      />
+                    </span>
+                    Home
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a
+                    href="about.html"
+                    class="menu-link text-decoration-none flex-col"
+                  >
+                    <span class="menu-icon flex">
+                      <img
+                        src="./assets/images/icons/information.svg"
+                        alt="home"
+                        class="img-fluid"
+                      />
+                    </span>
+                    About
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#!" class="menu-link text-decoration-none flex-col">
+                    <span class="menu-icon flex">
+                      <img
+                        src="./assets/images/icons/box-search.svg"
+                        alt="home"
+                        class="img-fluid"
+                      />
+                    </span>
+                    Products
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a
+                    href="#!"
+                    class="menu-link text-decoration-none flex-col w-100 h-100"
+                  >
+                    <span class="menu-icon flex">
+                      <img
+                        src="./assets/images/icons/setting.svg"
+                        alt="home"
+                        class="img-fluid"
+                      />
+                    </span>
+                    Services & Offerings
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#!" class="menu-link text-decoration-none flex-col">
+                    <span class="menu-icon flex">
+                      <img
+                        src="./assets/images/icons/ranking.svg"
+                        alt="home"
+                        class="img-fluid"
+                      />
+                    </span>
+                    Careers
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="#!" class="menu-link text-decoration-none flex-col">
+                    <span class="menu-icon flex">
+                      <img
+                        src="./assets/images/icons/messages.svg"
+                        alt="home"
+                        class="img-fluid"
+                      />
+                    </span>
+                    Contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end menu -->
+    </header>
+    <!-- End Header -->
+
+    <!-- Start products Page -->
+    <div class="single-product-page">
+      <div id="content">
+        <div class="container">
+          <h1 class="fixh page-title">Schoolna</h1>
+          <!-- Start breadcrumb -->
+          <div class="breadcrumb">
+            <ul class="fixul flex">
+              <li>
+                <a href="index.html" class="text-decoration-none">Home</a>
+              </li>
+              <li>
+                <a href="products.html" class="text-decoration-none"
+                  >Products</a
+                >
+              </li>
+              <li class="active">
+                <a href="#!" class="text-decoration-none">Schoolna</a>
+              </li>
+            </ul>
+          </div>
+          <!-- End breadcrumb -->
+          <div class="single-product-content">
+            <aside class="side-nav">
+              <ul class="side-list flex-col fixul">
+                <li class="side-item">
+                  <a href="#" class="side-link text-decoration-none flex">
+                    <img
+                      src="./assets/images/icons/product-icons/box-search.svg"
+                      alt="products"
+                    />
+                  </a>
+                </li>
+                <li class="side-item">
+                  <a
+                    href="#"
+                    class="side-link active text-decoration-none flex"
+                    title="Schoolna"
+                  >
+                    <img
+                      src="./assets/images/icons/product-icons/Layer 1.svg"
+                      alt="Schoolna"
+                    />
+                  </a>
+                </li>
+                <li class="side-item">
+                  <a
+                    href="#"
+                    class="side-link text-decoration-none flex"
+                    title="Rawda"
+                  >
+                    <img
+                      src="./assets/images/icons/product-icons/Layer 1.svg"
+                      alt="Rawda"
+                    />
+                  </a>
+                </li>
+                <li class="side-item">
+                  <a
+                    href="#"
+                    class="side-link text-decoration-none flex"
+                    title="Aqar"
+                  >
+                    <img
+                      src="./assets/images/icons/product-icons/Layer 1.svg"
+                      alt="Aqar"
+                    />
+                  </a>
+                </li>
+                <li class="side-item">
+                  <a
+                    href="#"
+                    class="side-link text-decoration-none flex"
+                    title="Automator"
+                  >
+                    <img
+                      src="./assets/images/icons/product-icons/Layer 1.svg"
+                      alt="Automator"
+                    />
+                  </a>
+                </li>
+                <li class="side-item">
+                  <a
+                    href="#"
+                    class="side-link text-decoration-none flex"
+                    title="Board.G"
+                  >
+                    <img
+                      src="./assets/images/icons/product-icons/Layer 1.svg"
+                      alt="Board.G"
+                    />
+                  </a>
+                </li>
+              </ul>
+              <span id="toggleSideNav" class="side-toggle-arrow">
+                <i class="las la-angle-double-right"></i>
+              </span>
+            </aside>
+            <div class="tab-head product-tabs">
+              <ul class="nav navTabs fixul" role="tablist">
+                <li class="nav-item">
+                  <button
+                    class="nav-link active"
+                    data-bs-toggle="tab"
+                    data-bs-target="#overview"
+                    aria-selected="true"
+                    role="tab"
+                  >
+                    Overview
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="tab"
+                    data-bs-target="#components"
+                    aria-selected="false"
+                    tabindex="-1"
+                    role="tab"
+                  >
+                    Components
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="tab"
+                    data-bs-target="#features"
+                    aria-selected="false"
+                    tabindex="-1"
+                    role="tab"
+                  >
+                    features
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="tab"
+                    data-bs-target="#users "
+                    aria-selected="false"
+                    tabindex="-1"
+                    role="tab"
+                  >
+                    Users
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="tab"
+                    data-bs-target="#clients"
+                    aria-selected="false"
+                    tabindex="-1"
+                    role="tab"
+                  >
+                    Clients
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="overview">
+                <div class="row overview-row g-4">
+                  <div class="col-lg-6">
+                    <div class="overview-txt">
+                      <h1 class="title fixh">
+                        SMART Schools Create Bright Futures!
+                      </h1>
+                      <p class="description fixp">
+                        Schoolna is a digital transformation tool with an
+                        intuitive interface and powerful automation that
+                        simplifies school management and enhances the
+                        educational experience for all institutions.
+                      </p>
+                      <ul class="fixul about-list">
+                        <li>Public and Private Schools .</li>
+                        <li>Language and International Schools</li>
+                        <li>Educational Institutes .</li>
+                        <li>Kindergartens and Preschools</li>
+                        <li>Religious or Specialized Institutions</li>
+                      </ul>
+                      <div class="features-btns">
+                        <a
+                          href="#!"
+                          class="text-decoration-none f-btn request-copy"
+                          >Request a free copy</a
+                        >
+                        <a
+                          href="#!"
+                          class="text-decoration-none f-btn download-brochure"
+                          >Download Brochure <i class="las la-download"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="overview-img">
+                      <img
+                        src="./assets/images/overview.png"
+                        alt="overview"
+                        class="img-fluid"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="components">
+                <div class="row cards-row">
+                  <div class="col-lg-3 col-md-6 service-card">
+                    <div class="card-content">
+                      <div class="card-image loading-img flex">
+                        <img
+                          data-src="./assets/images/service/01.png"
+                          alt="Student Information Management
+"
+                          class="img-fluid lazy-img"
+                        />
+                      </div>
+                      <div class="card-details">
+                        <h3 class="card-title fixh">
+                          Student Information Management
+                        </h3>
+                        <p class="fixp card-description">
+                          Store, manage, and access all student records in one
+                          secure place, including academic history, attendance,
+                          behavior, medical data, and more.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 service-card">
+                    <div class="card-content">
+                      <div class="card-image loading-img flex">
+                        <img
+                          data-src="./assets/images/service/02.png"
+                          alt="Teacher & Classroom Management"
+                          class="img-fluid lazy-img"
+                        />
+                      </div>
+                      <div class="card-details">
+                        <h3 class="card-title fixh">
+                          Teacher & Classroom Management
+                        </h3>
+                        <p class="fixp card-description">
+                          Store, manage, and access all student records in one
+                          secure place, including academic history, attendance,
+                          behavior, medical data, and more.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 service-card">
+                    <div class="card-content">
+                      <div class="card-image loading-img flex">
+                        <img
+                          data-src="./assets/images/service/03.png"
+                          alt="Parent & Student Portal
+"
+                          class="img-fluid lazy-img"
+                        />
+                      </div>
+                      <div class="card-details">
+                        <h3 class="card-title fixh">Parent & Student Portal</h3>
+                        <p class="fixp card-description">
+                          Store, manage, and access all student records in one
+                          secure place, including academic history, attendance,
+                          behavior, medical data, and more.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 service-card">
+                    <div class="card-content">
+                      <div class="card-image loading-img flex">
+                        <img
+                          data-src="./assets/images/service/04.png"
+                          alt="Academic Planning & Scheduling
+"
+                          class="img-fluid lazy-img"
+                        />
+                      </div>
+                      <div class="card-details">
+                        <h3 class="card-title fixh">
+                          Academic Planning & Scheduling
+                        </h3>
+                        <p class="fixp card-description">
+                          Store, manage, and access all student records in one
+                          secure place, including academic history, attendance,
+                          behavior, medical data, and more.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="features">
+                <div class="row features-content">
+                  <div class="col-lg-3">
+                    <div class="features-box">
+                      <div class="feature-img loading-img">
+                        <img
+                          data-src="./assets/images/feature.png"
+                          alt="feature"
+                          class="img-fluid img-cover lazy-img"
+                        />
+                      </div>
+                      <div class="feature-txt">
+                        <h3 class="title fixh">A world Full of Features</h3>
+                        <p class="description fixp">
+                          Our system meets everyone's needs. Discover its
+                          features and make it an essential part of your
+                          nursery's success
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-9">
+                    <div class="items-row">
+                      <div class="item-content">
+                        <div class="item-head">
+                          <span class="item-icon"
+                            ><img
+                              src="./assets/images/icons/product-icons/Layer 1.svg"
+                              alt="Schoolna"
+                          /></span>
+                          <h4 class="fixh item-title">Schoolna</h4>
+                        </div>
+                        <p class="fixp item-breif">
+                          service for implementation and consultancy of
+                          Microsoft Dynamics 365 solutions for business
+                          management, finance, customer relations, and contact
+                          centers.
+                        </p>
+                      </div>
+
+                      <div class="item-content">
+                        <div class="item-head">
+                          <span class="item-icon"
+                            ><img
+                              src="./assets/images/icons/product-icons/Layer 1.svg"
+                              alt="Rawda"
+                          /></span>
+                          <h4 class="fixh item-title">Rawda</h4>
+                        </div>
+                        <p class="fixp item-breif">
+                          service for implementation and consultancy of
+                          Microsoft Dynamics 365 solutions for business
+                          management, finance, customer relations, and contact
+                          centers.
+                        </p>
+                      </div>
+
+                      <div class="item-content">
+                        <div class="item-head">
+                          <span class="item-icon"
+                            ><img
+                              src="./assets/images/icons/product-icons/Layer 1.svg"
+                              alt="Aqar"
+                          /></span>
+                          <h4 class="fixh item-title">Aqar</h4>
+                        </div>
+                        <p class="fixp item-breif">
+                          service for implementation and consultancy of
+                          Microsoft Dynamics 365 solutions for business
+                          management, finance, customer relations, and contact
+                          centers.
+                        </p>
+                      </div>
+
+                      <div class="item-content">
+                        <div class="item-head">
+                          <span class="item-icon"
+                            ><img
+                              src="./assets/images/icons/product-icons/Layer 1.svg"
+                              alt="Automator"
+                          /></span>
+                          <h4 class="fixh item-title">Automator</h4>
+                        </div>
+                        <p class="fixp item-breif">
+                          service for implementation and consultancy of
+                          Microsoft Dynamics 365 solutions for business
+                          management, finance, customer relations, and contact
+                          centers.
+                        </p>
+                      </div>
+
+                      <div class="item-content">
+                        <div class="item-head">
+                          <span class="item-icon"
+                            ><img
+                              src="./assets/images/icons/product-icons/Layer 1.svg"
+                              alt="Board.G"
+                          /></span>
+                          <h4 class="fixh item-title">Board.G</h4>
+                        </div>
+                        <p class="fixp item-breif">
+                          service for implementation and consultancy of
+                          Microsoft Dynamics 365 solutions for business
+                          management, finance, customer relations, and contact
+                          centers.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="users"></div>
+              <div class="tab-pane fade" id="clients">
+                <div class="clients-row row g-5">
+                  <div class="col-lg-4">
+                    <div class="page-head">
+                      <h2 class="fixh title">Our Clienta</h2>
+                      <h3 class="fixh subtitle">Learn with our Partners</h3>
+                    </div>
+                    <p class="description fixp">
+                      We offer certified training solutions from over 20
+                      industry-leading partners for the tools and technologies
+                      you use every day.
+                    </p>
+
+                    <div class="swiper-btns">
+                      <div class="swiper-btn swiper-button-next flex">
+                        <i class="las la-angle-left"></i>
+                      </div>
+                      <div class="swiper-btn swiper-button-prev flex">
+                        <i class="las la-angle-right"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-8">
+                    <div class="clients-slider">
+                      <div class="swiper">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/01.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/02.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/01.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/02.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/01.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/02.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/01.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/02.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/01.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/02.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/01.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/02.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/01.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/02.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/01.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/02.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/01.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/02.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/01.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/02.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/01.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/02.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/01.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="client-item flex loading-img">
+                              <img
+                                data-src="./assets/images/clients/02.png"
+                                alt="client"
+                                class="img-fluid lazy-img"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start Footer -->
+    <footer class="footer fixed-bottom">
+      <div class="footer-content">
+        <div class="footer-list py-3">
+          <div class="container">
+            <ul class="fixul d-flex align-items-center justify-content-between">
+              <li class="active">
+                <a
+                  href="#!"
+                  class="text-decoration-none d-flex align-items-center gap-1"
+                >
+                  <img src="./assets/images/icons/home-2.svg" alt="home" />
+                  <span>Home</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  class="text-decoration-none d-flex align-items-center gap-1"
+                  ><img
+                    src="./assets/images/icons/information-2.svg"
+                    alt="about"
+                  /><span>About us</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  class="text-decoration-none d-flex align-items-center gap-1"
+                  ><img
+                    src="./assets/images/icons/box-search-2.svg"
+                    alt="products"
+                  /><span>Products</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  class="text-decoration-none d-flex align-items-center gap-1"
+                >
+                  <img
+                    src="./assets/images/icons/setting-2.svg"
+                    alt="Services"
+                  />
+                  <span>Services & Offerings</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  class="text-decoration-none d-flex align-items-center gap-1"
+                  ><img
+                    src="./assets/images/icons/messages-2.svg"
+                    alt="Contact"
+                    class="img-fluid"
+                  /><span>Contact us</span></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyrights">
+          <div class="container">
+            <div
+              class="d-flex flex-column flex-md-row align-items-center justify-content-between py-3"
+            >
+              <p class="m-0 p-0 text-center copy-text">
+                Copyright &copy; 2025
+                <a href="#!" class="text-decoration-none company-name"
+                  >MAZAYA Software Company</a
+                >
+                . All Rights Reserved.
+              </p>
+              <div>
+                <ul class="fixul d-flex align-items-center">
+                  <li>
+                    <a href="#!" class="text-decoration-none">Privacy Policy</a>
+                  </li>
+                  <li>
+                    <a href="#!" class="text-decoration-none">Cookies Policy</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/swiper-bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
