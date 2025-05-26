@@ -1,18 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
+  lazyLoad();
   //add padding to the body with the height of header
   const header = document.querySelector("header");
-  const navbarHeight = header.offsetHeight;
-  document.documentElement.style.setProperty(
-    "--header-height",
-    navbarHeight + "px"
-  );
-
   const footer = document.querySelector("footer");
-  const footerHeight = footer.offsetHeight - 58;
-  document.documentElement.style.setProperty(
-    "--footer-height",
-    footerHeight + "px"
-  );
+
+  if (header && footer) {
+    const navbarHeight = header.offsetHeight;
+    const footerHeight = footer.offsetHeight - 58;
+
+    document.documentElement.style.setProperty(
+      "--header-height",
+      `${navbarHeight}px`
+    );
+    document.documentElement.style.setProperty(
+      "--footer-height",
+      `${footerHeight}px`
+    );
+  }
 
   const menuBar = document.querySelector(".menu-bar");
   menuBar?.addEventListener("click", () => {
@@ -156,6 +160,150 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
+  //solution slider
+  var solutionSlider = new Swiper(".solution-slider .swiper", {
+    loop: true,
+    autoplay: {
+      delay: 3000,
+    },
+    speed: 1000,
+    preloadImages: true,
+    breakpoints: {
+      0: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 15,
+      },
+      1199: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    },
+    on: {
+      init: function (swiper) {
+        lazyLoad();
+      },
+    },
+  });
+
+  // Initialize main select
+  const mainSelect = new SlimSelect({
+    select: "#main-select",
+    settings: {
+      showSearch: false,
+    },
+  });
+
+  // Initialize dependent select
+  const dependentSelect = new SlimSelect({
+    select: "#dependent-select",
+    settings: {
+      showSearch: false,
+    },
+  });
+
+  // Define the options for each main selection
+  const dependentOptions = {
+    Products: [
+      { text: "Schoolna", value: "Schoolna" },
+      { text: "Aqar", value: "Aqar" },
+      { text: "Rawadah", value: "Rawadah" },
+      { text: "Board.G", value: "Board.G" },
+      { text: "Automate", value: "Automate" },
+    ],
+    "Implementation and Consultancy": [
+      { text: "MS Dynamics 365 F&O", value: "MS Dynamics 365 F&O" },
+      { text: "MS Dynamics 365 BC", value: "MS Dynamics 365 BC" },
+      { text: "MS Dynamics 365 CRM", value: "MS Dynamics 365 CRM" },
+      {
+        text: "MS Dynamics 365 Contact Center",
+        value: "MS Dynamics 365 Contact Center",
+      },
+    ],
+    "AI & RPA Solutions": [
+      {
+        text: "AI Chatbots and Social Management",
+        value: "AI Chatbots and Social Management",
+      },
+      {
+        text: "AI Use cases development and Automation",
+        value: "AI Use cases development and Automation",
+      },
+      {
+        text: "RPA services and Development",
+        value: "RPA services and Development",
+      },
+    ],
+    "Risk & Compliance": [
+      { text: "Advanced Risk Analytics", value: "Advanced Risk Analytics" },
+      {
+        text: "Integrated Risk Management",
+        value: "Integrated Risk Management",
+      },
+      { text: "Compliance & GRC", value: "Compliance & GRC" },
+      { text: "Code Revue", value: "Code Revue" },
+    ],
+    "Cybersecurity Solutions": [
+      { text: "DLP", value: "DLP" },
+      { text: "MDM", value: "MDM" },
+      { text: "Network Security", value: "Network Security" },
+      {
+        text: "Advanced Threat Intelligence",
+        value: "Advanced Threat Intelligence",
+      },
+      { text: "Software Security", value: "Software Security" },
+    ],
+    "Digital Marketing & Development": [
+      {
+        text: "Digital Identity & Branding",
+        value: "Digital Identity & Branding",
+      },
+      {
+        text: "Social Management & digital Marketing",
+        value: "Social Management & digital Marketing",
+      },
+      {
+        text: "Content Creation",
+        value: "Content Creation",
+      },
+      {
+        text: "App & Web development",
+        value: "App & Web development",
+      },
+      {
+        text: "SEO",
+        value: "SEO",
+      },
+    ],
+  };
+
+  // Add event listener to main select
+  document
+    .querySelector("#main-select")
+    .addEventListener("change", function () {
+      const selectedValue = this.value;
+      const dependentSelectElement =
+        document.querySelector("#dependent-select");
+
+      // Clear current options
+      dependentSelect.setData([]);
+
+      if (selectedValue && dependentOptions[selectedValue]) {
+        // Add new options based on selection
+        dependentSelect.setData(dependentOptions[selectedValue]);
+        dependentSelect.setPlaceholder("Select an option");
+      } else {
+        dependentSelect.setPlaceholder("Select a Solution first");
+      }
+    });
+
   //lazy load setup
   function lazyLoad() {
     const images = document.querySelectorAll(".lazy-img");
@@ -183,6 +331,4 @@ document.addEventListener("DOMContentLoaded", () => {
       img.parentElement.classList.add("loaded-img");
     };
   }
-
-  lazyLoad();
 });
