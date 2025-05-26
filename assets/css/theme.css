@@ -121,3 +121,8 @@ input {
   -webkit-filter: blur(0);
   filter: blur(0);
 }
+@media (max-width: 991px) {
+  body {
+    padding-bottom: calc(var(--footer-height) + 58px);
+  }
+}
