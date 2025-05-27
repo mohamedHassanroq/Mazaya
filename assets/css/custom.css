@@ -486,7 +486,8 @@
   display: flex;
   align-items: center;
 }
-.products-content .item-head .item-icon {
+.products-content .item-head .item-icon,
+.service-content .item-head .item-icon {
   font-size: 28px;
   color: #939393;
   margin-inline-end: 12px;
