@@ -288,6 +288,8 @@
 }
 .about-img {
   aspect-ratio: 435 / 499;
+  max-width: 435px;
+  margin: auto;
 }
 .page-head .title {
   border-radius: calc(var(--btn-raduis) * 2);
@@ -309,11 +311,6 @@
 }
 .page-head .subtitle > mark {
   color: var(--primary-color);
-}
-.about-description {
-  color: #424446;
-  font-size: 18px;
-  text-align: justify;
 }
 .about-list > li {
   position: relative;
@@ -346,6 +343,8 @@
   overflow: hidden;
   position: relative;
   aspect-ratio: 378 / 469;
+  max-width: 378px;
+  margin: auto;
 }
 .img-text {
   position: absolute;
@@ -357,12 +356,100 @@
   font-size: 16px;
   font-weight: 500;
 }
-.missions-text {
+.missions {
   background-image: url("../images/map.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   aspect-ratio: 682 / 423;
+}
+.mission-box {
+  position: relative;
+}
+.mission-box:not(:last-child) {
+  margin-bottom: 14px;
+}
+.mission-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #e7e8ea;
+  border-radius: 10px;
+  border: 4.5px solid var(--white-color);
+  flex-shrink: 0;
+  position: relative;
+}
+.mission-icon::before {
+  content: "";
+  border: 4px solid #26bf19;
+  border-inline-start: none;
+  position: absolute;
+  width: calc(100% + 4px);
+  height: calc(100% + 16px);
+  inset-inline-end: -9px;
+  border-end-end-radius: 10px;
+  border-start-end-radius: 10px;
+  z-index: -1;
+}
+.mission-box:nth-child(2) .mission-icon::before {
+  border-color: #ffc700;
+}
+.mission-box:nth-child(3) .mission-icon::before {
+  border-color: #2a84f1;
+}
+.mission-box:nth-child(4) .mission-icon::before {
+  border-color: #f15d2a;
+}
+.mission-box:nth-child(5) .mission-icon::before {
+  border-color: #1d84a8;
+}
+.mission-txt {
+  color: #0d1e27;
+  font-size: 16px;
+  font-weight: 500;
+}
+.mission-box .line {
+  display: inline-block;
+  border: 2.47px solid #26bf19;
+  border-inline-start: none;
+  border-block-start: none;
+  position: absolute;
+  inset-inline-start: 0;
+}
+.mission-box:first-child .line {
+  width: 101px;
+  height: 84px;
+  border-end-end-radius: 20px;
+  top: 100%;
+}
+.mission-box:nth-child(2) .line {
+  width: 219px;
+  height: 48px;
+  border-end-end-radius: 20px;
+  top: 100%;
+  border-color: #ffc700;
+}
+.mission-box:nth-child(3) .line {
+  width: 240px;
+  height: 0px;
+  border-end-end-radius: 20px;
+  top: 50%;
+  border-color: #2a84f1;
+}
+.mission-box:nth-child(4) .line {
+  width: 219px;
+  height: 48px;
+  border-end-end-radius: 20px;
+  bottom: 100%;
+  border-color: #f15d2a;
+  transform: rotateX(180deg);
+}
+.mission-box:last-child .line {
+  width: 101px;
+  height: 84px;
+  border-end-end-radius: 20px;
+  bottom: 100%;
+  border-color: #1d84a8;
+  transform: rotateX(180deg);
 }
 /****************services*******************/
 .side-nav {
@@ -865,10 +952,6 @@ textarea.custom-input {
   .footer-list li > a > span {
     display: none;
   }
-  /***************about page**************/
-  .about-img {
-    aspect-ratio: 435 / 435;
-  }
   /****************single product*****************/
   .why-box {
     display: none;
@@ -881,6 +964,20 @@ textarea.custom-input {
   .getting-start-img {
     aspect-ratio: 409 / 250;
     margin: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .mission-box:first-child,
+  .mission-box:last-child {
+    padding-inline-start: 70px;
+  }
+  .mission-box:nth-child(2),
+  .mission-box:nth-child(4) {
+    padding-inline-start: 185px;
+  }
+  .mission-box:nth-child(3) {
+    padding-inline-start: 240px;
+    margin: 50px 0;
   }
 }
 @media screen and (max-width: 767px) {
@@ -918,6 +1015,9 @@ textarea.custom-input {
   }
   .menu-item > .menu-link {
     font-size: 16px;
+  }
+  .mission-box .line {
+    display: none;
   }
   /***********services*******/
   .page-head .subtitle {
