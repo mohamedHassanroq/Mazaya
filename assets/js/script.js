@@ -27,11 +27,20 @@ document.addEventListener("DOMContentLoaded", () => {
   //open search
   const searchButtons = document.querySelectorAll(".search-btn");
   const searchBox = document.querySelector(".search-box");
+  const overlay = document.querySelector(".search-overlay");
 
+  // Toggle search box and overlay on button click
   searchButtons.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
+    btn.addEventListener("click", () => {
       searchBox.classList.toggle("active");
+      overlay.classList.toggle("active");
     });
+  });
+
+  // Hide search box and overlay when clicking the overlay
+  overlay.addEventListener("click", () => {
+    searchBox.classList.remove("active");
+    overlay.classList.remove("active");
   });
 
   // Typewriter setup
