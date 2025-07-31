@@ -1186,6 +1186,90 @@ html[dir="ltr"] .why-item::before {
 .items-content .why-item:last-child:nth-child(3n + 1) {
   grid-column: 1 / -1;
 }
+/********************time line ******************/
+
+.timeline-wrapper {
+  display: flex;
+  border-bottom: 1px solid var(--primary-color);
+  margin-top: 240px;
+  margin-bottom: 180px;
+}
+.timeline-event {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+.timeline-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+}
+.e-year {
+  font-size: 24px;
+  color: var(--primary-color);
+  font-weight: 700;
+  padding: 10px 0;
+}
+.e-desc {
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
+  font-size: 14px;
+  color: var(--text-color);
+  position: relative;
+  margin-top: 70px;
+  background-color: var(--white-color);
+  border-radius: var(--border-raduis);
+  padding: 10px;
+}
+.e-circle {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--secondery-color);
+  border-radius: 50%;
+  position: relative;
+}
+.e-circle::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: var(--secondery-color);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.e-circle::before {
+  content: url(../images/line.svg);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.timeline-event:nth-of-type(even) .e-desc {
+  order: 1;
+  align-items: flex-end;
+  margin-bottom: 70px;
+}
+.timeline-event:nth-of-type(even) .e-circle::before {
+  transform: rotateX(180deg) translateX(-50%);
+  top: unset;
+  bottom: 100%;
+}
+.timeline-event:nth-of-type(even) .e-circle {
+  order: 2;
+}
+.timeline-event:nth-of-type(even) .e-year {
+  order: 3;
+}
+.timeline-event:nth-of-type(odd) .timeline-cont {
+  top: -63px;
+}
+.timeline-event:nth-of-type(even) .timeline-cont {
+  bottom: -63px;
+}
 
 @media (min-width: 992px) {
   .about-tabs .nav-link {
@@ -1218,5 +1302,16 @@ html[dir="ltr"] .why-item::before {
   }
   .about-tabs .nav-link .text {
     display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .timline-container {
+    overflow-x: auto; /* Allow scrolling */
+    overflow-y: hidden;
+    width: 100%;
+  }
+  .timeline-wrapper {
+    min-width: 850px;
   }
 }
