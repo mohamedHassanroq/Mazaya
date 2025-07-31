@@ -1067,6 +1067,7 @@ textarea.custom-input {
 }
 .about-page .page-head .subtitle {
   font-size: 26px;
+  text-align: start;
 }
 .description {
   font-size: 16px;
