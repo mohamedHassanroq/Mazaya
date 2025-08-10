@@ -86,6 +86,29 @@ document.addEventListener("DOMContentLoaded", () => {
     type(); // Start the typewriter
   }
 
+  // tabs xcroll
+  const tabs = document.querySelector(".custom-tabs .navTabs");
+
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  tabs.addEventListener("mousedown", (e) => {
+    isDown = true;
+    tabs.classList.add("dragging");
+    startX = e.pageX - tabs.offsetLeft;
+    scrollLeft = tabs.scrollLeft;
+  });
+  tabs.addEventListener("mouseleave", () => (isDown = false));
+  tabs.addEventListener("mouseup", () => (isDown = false));
+  tabs.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - tabs.offsetLeft;
+    const walk = (x - startX) * 1; // scroll speed
+    tabs.scrollLeft = scrollLeft - walk;
+  });
+
   //add active for the current page link
   const currentPath = window.location.pathname;
   const navItems = document.querySelectorAll(".footer-list li");
