@@ -107,12 +107,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Data
   const dcData = [
     {
-      html: '<span class="dcSelect-icon"><img src="../assets/images/dc-images/document-text.svg"></span> Documents',
+      html: '<span class="dcSelect-icon"><img src="./assets/images/dcImages/document-text.svg"></span> Documents',
       text: "Documents",
       value: "documents",
     },
     {
-      html: '<span class="dcSelect-icon"><img src="../assets/images/dc-images/play-cricle.svg"></span> Videos',
+      html: '<span class="dcSelect-icon"><img src="./assets/images/dcImages/play-cricle.svg"></span> Videos',
       text: "Videos",
       value: "videos",
     },
