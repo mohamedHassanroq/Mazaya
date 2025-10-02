@@ -12,10 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "--header-height",
       `${navbarHeight}px`
     );
-    document.documentElement.style.setProperty(
-      "--footer-height",
-      `${footerHeight}px`
-    );
   }
 
   const menuBar = document.querySelector(".menu-bar");
@@ -86,28 +82,98 @@ document.addEventListener("DOMContentLoaded", () => {
     type(); // Start the typewriter
   }
 
-  // tabs xcroll
-  const tabs = document.querySelector(".custom-tabs .navTabs");
+  // Initialize main select
+  const mainSelectEl = document.querySelector("#main-select");
+  if (mainSelectEl) {
+    new SlimSelect({
+      select: "#main-select",
+      settings: {
+        showSearch: false,
+      },
+    });
+  }
 
-  let isDown = false;
-  let startX;
-  let scrollLeft;
+  // Initialize dependent select
+  const dependentSelectEl = document.querySelector("#dependent-select");
+  if (dependentSelectEl) {
+    new SlimSelect({
+      select: "#dependent-select",
+      settings: {
+        showSearch: false,
+      },
+    });
+  }
 
-  tabs.addEventListener("mousedown", (e) => {
-    isDown = true;
-    tabs.classList.add("dragging");
-    startX = e.pageX - tabs.offsetLeft;
-    scrollLeft = tabs.scrollLeft;
-  });
-  tabs.addEventListener("mouseleave", () => (isDown = false));
-  tabs.addEventListener("mouseup", () => (isDown = false));
-  tabs.addEventListener("mousemove", (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - tabs.offsetLeft;
-    const walk = (x - startX) * 1; // scroll speed
-    tabs.scrollLeft = scrollLeft - walk;
-  });
+  // Data
+  const dcData = [
+    {
+      html: '<span class="dcSelect-icon"><img src="../assets/images/dc-images/document-text.svg"></span> Documents',
+      text: "Documents",
+      value: "documents",
+    },
+    {
+      html: '<span class="dcSelect-icon"><img src="../assets/images/dc-images/play-cricle.svg"></span> Videos',
+      text: "Videos",
+      value: "videos",
+    },
+    // etc...
+  ];
+  // Initialize dc select
+  const dcSelectEl = document.querySelector("#dc-select");
+  if (dcSelectEl) {
+    new SlimSelect({
+      select: "#dc-select",
+      data: dcData,
+      settings: {
+        showSearch: false,
+      },
+    });
+  }
+
+  //initialize mixitup filter for document center
+  const containerEl = document.querySelector(".dcFilter-results");
+  if (containerEl) {
+    mixitup(containerEl);
+  }
+
+  // Reusable drag-to-scroll function
+  function enableDragScroll(selector) {
+    const el = document.querySelector(selector);
+    if (!el) return;
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    el.addEventListener("mousedown", (e) => {
+      isDown = true;
+      el.classList.add("dragging");
+      startX = e.pageX - el.offsetLeft;
+      scrollLeft = el.scrollLeft;
+    });
+
+    el.addEventListener("mouseleave", () => {
+      isDown = false;
+      el.classList.remove("dragging");
+    });
+
+    el.addEventListener("mouseup", () => {
+      isDown = false;
+      el.classList.remove("dragging");
+    });
+
+    el.addEventListener("mousemove", (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - el.offsetLeft;
+      const walk = (x - startX) * 1; // scroll speed
+      el.scrollLeft = scrollLeft - walk;
+    });
+  }
+
+  // Call for each section you want to make draggable
+  enableDragScroll(".custom-tabs .navTabs");
+  enableDragScroll(".dcFilter-controls");
 
   //add active for the current page link
   const currentPath = window.location.pathname;
@@ -222,22 +288,6 @@ document.addEventListener("DOMContentLoaded", () => {
       init: function (swiper) {
         lazyLoad();
       },
-    },
-  });
-
-  // Initialize main select
-  const mainSelect = new SlimSelect({
-    select: "#main-select",
-    settings: {
-      showSearch: false,
-    },
-  });
-
-  // Initialize dependent select
-  const dependentSelect = new SlimSelect({
-    select: "#dependent-select",
-    settings: {
-      showSearch: false,
     },
   });
 
